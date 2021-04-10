@@ -78,7 +78,7 @@ Biensûr, lorsqu'on parle de gestion de conccurence entre plusieurs transactions
 
 Demo Interblocages :
 
-| Timing | Session N° 1 (User1)   | Session N° 2 (User2) |Résultat | 
+| Timing | Session N° 1 (UTILISATEUR1)   | Session N° 2 (UTILISATEUR2) |Résultat | 
 | :----: | :----: |:----:|:----:|
 | t0 | ``` SELECT ENAME, SAL FROM EMP WHERE ENAME IN ('Mohamed','Hichem');``` |||
 | t1 | ``` UPDATE EMP SET SAL = 4000 WHERE ENAME ='Hichem'; ``` |------|update done|
@@ -95,13 +95,13 @@ Plus le niveau est permissif, plus l’exécution est fluide, plus les anomalies
 Plus le niveau est strict, plus l’exécution risque de rencontrer des blocages, moins les anomalies sont possibles.
 Le niveau d’isolation par défaut n’est jamais le plus strict c'est pourquoi quand l’isolation totale est nécessaire, il faut l’indiquer explicitement.
 
-Les 4 niveaux existants dans Oracle sont  **(ordonnés du moins strict au plus strict)** : 
+Les 4 niveaux existants dans Oracle sont  ***(ordonnés du moins strict au plus strict)*** : 
 
-- **Read uncommited** : tout est permis 
+- ***Read uncommited*** : tout est permis 
 
-- **Read commited** : une requête accède à l’état de la base de données *au moment où la requête est exécutée*
+- ***Read commited*** : une requête accède à l’état de la base de données *au moment où la requête est exécutée*
 
-- **Repeatable read** : Une requête accède à l’état de la base de données *au moment où la transaction a débutée*
+- ***Repeatable read*** : Une requête accède à l’état de la base de données *au moment où la transaction a débutée*
 
 - **Serializable** : Garantit une isolation totale => Cohérence de la base.
 
